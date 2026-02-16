@@ -99,6 +99,7 @@ Strongest predictor of streaming volume. Search behaviour reflects real listener
 ---
 
 ## 📂 Project Structure
+```
 spotify-music-popularity-analysis/
 ├── data/
 │ ├── raw/
@@ -111,7 +112,7 @@ spotify-music-popularity-analysis/
 ├── tableau/
 ├── outputs/
 └── README.md
-
+```
 ---
 
 ## 📊 Tableau Dashboard
