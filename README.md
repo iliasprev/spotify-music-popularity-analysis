@@ -1,6 +1,6 @@
 # 🎵 Spotify Cross-Platform Streaming Analysis
 
-> 📌 End-to-end data analysis project:
+> 📌 End-to-end data analysis project:  
 > Data cleaning → Exploratory analysis → Statistical modelling → Business insights
 
 ---
@@ -24,14 +24,15 @@
 
 ## 📌 Executive Summary
 
-This project analyses cross-platform engagement signals (Spotify playlists, TikTok, YouTube and Shazam) to determine which factors most strongly influence Spotify streaming performance.
+This project analyses cross-platform engagement signals (Spotify playlists, TikTok, YouTube and Shazam) to determine which factors are statistically associated with Spotify streaming performance.
 
-Using statistical modelling and regression analysis, the results show:
+Using descriptive statistics, correlation analysis, and regression modelling, the results indicate:
 
-- Playlist reach is a major growth driver.
-- Shazam counts are the strongest predictor of streaming volume.
+- Playlist reach is strongly associated with higher streaming volume.
+- Shazam counts show the strongest explanatory relationship with streams.
+- YouTube engagement demonstrates a moderate relationship.
 - TikTok views alone do not reliably convert into sustained streams.
-- Multi-platform exposure outperforms single-platform spikes.
+- Sustained multi-platform exposure is more consistent than single-platform spikes.
 
 ---
 
@@ -41,7 +42,7 @@ This project investigates whether cross-platform engagement metrics are statisti
 
 Key questions explored:
 
-- Does playlist exposure significantly increase Spotify streams?
+- Does playlist exposure relate to higher Spotify streams?
 - Does TikTok virality convert into measurable streaming growth?
 - Is YouTube engagement a reliable predictor?
 - Does Shazam activity reflect real listener demand?
@@ -55,12 +56,12 @@ Dataset: **Most Streamed Spotify Songs 2024**
 
 The dataset contains:
 
-- 4,600 tracks
-- 29 variables
-- Cross-platform engagement metrics
-- Playlist exposure indicators
-- Streaming counts
-- Search behaviour signals
+- 4,600 tracks  
+- 29 variables  
+- Cross-platform engagement metrics  
+- Playlist exposure indicators  
+- Streaming counts  
+- Listener search behaviour signals  
 
 ---
 
@@ -69,6 +70,7 @@ The dataset contains:
 - Python (Pandas, NumPy)
 - Matplotlib
 - Seaborn
+- Scikit-learn
 - Jupyter Notebook
 - Tableau
 - Git & GitHub
@@ -83,7 +85,7 @@ The dataset contains:
 
 - Removed duplicate records (kept highest streamed version)
 - Converted numeric fields from string format
-- Standardised column naming
+- Standardised column naming (snake_case)
 - Preserved missing values for transparency
 - Converted date columns
 - Exported cleaned dataset for Tableau
@@ -96,10 +98,10 @@ The dataset contains:
 
 - Distribution analysis
 - Log transformations for skewed variables
-- Correlation matrix analysis
-- Regression modelling
+- Pearson correlation analysis
+- Linear regression modelling
 - R² comparison across platforms
-- Top 10 vs overall performance comparison
+- Descriptive Top 10 vs overall group comparison
 
 ---
 
@@ -107,45 +109,51 @@ The dataset contains:
 
 | Platform         | R² Value | Interpretation        |
 |------------------|----------|------------------------|
-| Playlist Reach   | 0.28     | Moderate relationship  |
-| TikTok Views     | 0.003    | Very weak relationship |
-| YouTube Views    | 0.22     | Moderate relationship  |
-| Shazam Counts    | 0.48     | Strong relationship    |
+| Shazam Counts    | ~0.53    | Strong relationship    |
+| Playlist Reach   | ~0.38    | Moderate relationship  |
+| YouTube Views    | ~0.22    | Moderate relationship  |
+| TikTok Views     | ~0.001   | Very weak relationship |
+
+R² represents the proportion of variance in Spotify streams explained by each individual platform metric in a simple linear regression model.
 
 ---
 
 ## 🔎 Key Insights
 
 ### 🎧 Playlist Reach
-Strong positive relationship. Tracks with higher playlist exposure tend to generate significantly more Spotify streams.
+Strong positive association. Tracks with higher playlist exposure tend to generate significantly more Spotify streams.
 
 ### 📺 YouTube Engagement
 Moderate relationship. Consistent cross-platform presence supports streaming growth.
 
 ### 🎥 TikTok
-Statistically weak relationship. Viral views do not consistently translate into sustained streaming performance.
+Statistically weak linear relationship. Viral views do not consistently translate into sustained streaming performance.
 
 ### 🔍 Shazam Activity
-Strongest predictor of streaming volume. Search behaviour reflects genuine listener intent and demand.
+Strongest explanatory variable. Search behaviour reflects genuine listener intent and demand.
 
 ---
 
 ## 📈 Final Insight — What Drives Top Streaming Performance
 
-The Top 10 streamed tracks significantly outperform the dataset average across all exposure metrics:
+A descriptive comparison between the Top 10 highest streamed tracks and the overall dataset shows substantially higher average exposure across all major platforms.
 
-- ~8x higher average Spotify streams  
-- ~5x higher playlist reach  
-- ~3–4x higher TikTok views  
+Top-performing tracks demonstrate consistently higher:
 
-This suggests that sustained multi-platform exposure — particularly playlist placement and listener search behaviour — plays a critical role in streaming success.
+- Average Spotify streams  
+- Playlist reach  
+- TikTok exposure  
+
+This comparison reflects group mean differences and does **not** imply causation, probability, or linear impact.
+
+Overall findings suggest that sustained multi-platform exposure — particularly strong playlist placement and listener search behaviour (Shazam activity) — is closely associated with higher streaming performance.
 
 However, correlation does not imply causation. Exposure may amplify already strong-performing tracks rather than directly cause success.
 
 ---
 
+
 ## 📂 Project Structure
-```
 spotify-music-popularity-analysis/
 │
 ├── data/
@@ -157,14 +165,11 @@ spotify-music-popularity-analysis/
 │ └── 02_spotify_eda.ipynb
 │
 ├── images/
-│ └── images/
 │ └── dashboard_overview.png
 │
 ├── tableau/
 ├── outputs/
 └── README.md
-```
-
 
 ---
 
@@ -184,6 +189,5 @@ Each notebook is documented and can be run sequentially.
 ---
 
 ## 👤 Author
-
 **Ilias Prevyzis**  
 Data Analyst | Python | SQL | Tableau
