@@ -152,6 +152,7 @@ However, correlation does not imply causation. Exposure may amplify already stro
 
 ---
 
+```
 
 ## 📂 Project Structure
 spotify-music-popularity-analysis/
@@ -171,6 +172,7 @@ spotify-music-popularity-analysis/
 ├── outputs/
 └── README.md
 
+```
 ---
 
 ## 📓 Notebooks
